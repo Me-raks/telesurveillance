@@ -1,0 +1,30 @@
+{% extends 'server/base.html' %}
+
+{% block content%}
+<body style="background-image:none">
+    <div class="uk-position-relative">
+        <header>
+            <h1 >Dashboard</h1>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+           Signal ECG
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+              {% load static%}  <img src="{% static 'server/media/temperature.png' %}" width="30px" height="30px" alt="">
+              temperature
+            </div>
+            <div class="col-sm">
+             SPO<sub>2</sub>
+            </div>
+            <div class="col-sm">
+              Pression
+            </div>
+          </div>
+      </div>
+</body>
+{% endblock %}

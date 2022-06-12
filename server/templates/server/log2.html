@@ -1,0 +1,35 @@
+{% extends "server/base.html" %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="container">
+        <form method="POST">{% csrf_token %}
+          {% if messages%}
+            {% for message in messages%}
+              <div class="alert alert-{{message.tags}}">{{message}}</div>
+            {% endfor %}
+          {%endif%}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                <div class="row row-cols-2">
+                    <div class="col-12">
+                    <label for=`{prof_form.prenom}`>Username</label>
+                    {{ form.username|add_class:'form-control border border-warning rounded' }}
+                    </div>
+                    <div class="col-12">
+                    <label for=`{prof_form.nom}`>Password</label>
+                    {{ form.password |crispy  }}
+                    </div>
+                </div>
+                <div class="col-12 form-group">
+                    <button class="btn btn-outline-info" type="submit">Login</button>
+                </div>
+            </fieldset>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+            </small>
+        </div>
+      </div>
+{% endblock content %}

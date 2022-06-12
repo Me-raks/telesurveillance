@@ -1,12 +1,18 @@
 {% extends 'server/base.html' %}
 
 {% block content%}
-<div class="uk-position-relative">
+<div class="uk-position-relative acc ">
     <header>
-        <h1 >Système Télésurveillance Médicale</h1>
+        <h1 >Télésurveillance Médicale</h1>
     </header>
-    <div class="container">
-        <div class="row justify-content-around bbs ">
+    <div class="container rounded" style="border:1px solid black;border-radius: 10px;backdrop-filter: blur(5px);">
+        <div class="" style="padding: 5px;">
+            <h1 class="display-4">i-Virtual</h1>
+            <p class="lead">i-Virtual est une plateforme intelligente de télésurveillance médicale, adressée aux patients présentant des pathologies chroniques qui nécessitent une prise en charge au long cours.
+                i-Virtual se positionne dans le cadre préventif en détectant de manière précoce les situations à risque de décompensation des pathologies. La plateforme envoie des alertes médicales au professionnel de santé référent pour qu’il intervienne.</p>
+            <hr class="my-4">
+          </div>
+        <div class="row justify-content-around bbs " style="padding: 10px;">
             <button type="button" class="btn btn-danger"><a class="nav-item nav-link" href="{% url 'dash' %}" style="color: aliceblue;">Diagnostique</a></button>
             <button type="button" class="btn btn-danger"><a class="nav-item nav-link" href="" style="color: aliceblue;">Historique<a></butto>
         </div>

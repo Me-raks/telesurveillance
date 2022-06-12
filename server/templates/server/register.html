@@ -1,38 +1,49 @@
 {% extends "server/base.html" %}
 {% load crispy_forms_tags %}
 {% load widget_tweaks %}
+{% block title %}
+<title>Register</title>
+{% endblock %}
 {% block content %}
-    <div class="container">
-        <form method="POST">{% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Today</legend>
-                <div class="row row-cols-2">
-                    <div class="col-12">
-                    <label for=`{prof_form.prenom}`>Username</label>
-                    {{ form.username |add_class:'form-control border border-warning rounded' }}
-                    </div>
-                    <div class="col-12">
-                    <label for=`{prof_form.prenom}`>Email</label>
-                    {{ form.email |add_class:'form-control border border-warning rounded' }}
-                    </div>
-                    <div class="col-12">
-                    <label for=`{prof_form.nom}`>Password</label>
-                    {{ form.password1 |add_class:'form-control border border-warning rounded' }}
-                    </div>
-                    <div class="col-12">
-                        <label for=`{prof_form.nom}`>Password</label>
-                        {{ form.password2 |add_class:'form-control border border-warning rounded' }}
+{% load static %}
+    <div class="container" style="height: 500px;">
+        <div class="row">
+            <div class="col-6">
+                <img src="{% static "server/media/log.jpg" %}" width="100%" class="d-inline-block align-top" alt="">
+            </div>
+        
+        <div class="col-6">
+            <form method="POST">{% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Join Today</legend>
+                        <div class="col-12">
+                        <label for=`{prof_form.prenom}`>Username</label>
+                        {{ form.username |add_class:'form-control border border-warning rounded' }}
                         </div>
-                </div>
-                <div class="col-12 form-group">
-                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
-                </div>
-            </fieldset>
-        </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
-            </small>
+                        <div class="col-12">
+                        <label for=`{prof_form.prenom}`>Email</label>
+                        {{ form.email |add_class:'form-control border border-warning rounded' }}
+                        </div>
+                        <div class="col-12">
+                        <label for=`{prof_form.nom}`>Password</label>
+                        {{ form.password1 |add_class:'form-control border border-warning rounded' }}
+                        </div>
+                        <div class="col-12">
+                            <label for=`{prof_form.nom}`>Password</label>
+                            {{ form.password2 |add_class:'form-control border border-warning rounded' }}
+                            </div>
+        
+                    <div class="col-12 form-group">
+                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                </small>
+            </div>
         </div>
-      </div>
+    </div>
+</div>
 {% endblock content %}

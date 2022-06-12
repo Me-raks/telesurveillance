@@ -1,30 +1,37 @@
 {% extends 'server/base.html' %}
-
+{% block title %}
+<title>Diagnostique</title>
+{% endblock %}
 {% block content%}
-<body style="background-image:none">
-    <div class="uk-position-relative">
+<div class="container" style="height: 800px;">
+    <div class="uk-position-relative" >
         <header>
-            <h1 >Dashboard</h1>
+            <h1 >Diagnostique</h1>
         </header>
     </div>
     <div class="container">
         <div class="row">
-          <div class="col-sm">
+          <div class="col">
            Signal ECG
           </div>
         </div>
         <div class="row">
-            <div class="col-sm">
+          <div class="col">
+           Signal PCG
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
               {% load static%}  <img src="{% static 'server/media/temperature.png' %}" width="30px" height="30px" alt="">
               temperature
             </div>
-            <div class="col-sm">
+            <div class="col">
              SPO<sub>2</sub>
             </div>
-            <div class="col-sm">
+            <div class="col">
               Pression
             </div>
           </div>
       </div>
-</body>
+    </div>
 {% endblock %}
